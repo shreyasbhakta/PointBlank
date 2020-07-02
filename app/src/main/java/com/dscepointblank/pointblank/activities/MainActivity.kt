@@ -3,7 +3,7 @@ package com.dscepointblank.pointblank.activities
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.dscepointblank.pointblank.R
-import com.dscepointblank.pointblank.utilityClasses.MyNotifications
+import com.dscepointblank.pointblank.notifications.MyNotifications
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -12,7 +12,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        button.setOnClickListener { val notify = MyNotifications(this)
-        notify.createNotification()}
+        val  notifications = MyNotifications(this)
+
+        button.setOnClickListener {
+            notifications.createNotification("Hey User!!","Point Blank Welcomes you")
+        }
     }
 }
