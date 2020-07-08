@@ -18,7 +18,7 @@ import java.lang.Exception
 
 const val TOPIC = "/topics/MyTopic"
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,6 @@ class MainActivity : AppCompatActivity() {
 
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
         button.setOnClickListener {
-
             if (notititle.text.toString().isNotEmpty() && notides.text.toString().isNotEmpty()) {
 
                 PushNotification(
@@ -38,7 +37,6 @@ class MainActivity : AppCompatActivity() {
                     ), TOPIC
                 )
                     .also { sendNotification(it) }
-
             }
         }
 

@@ -22,7 +22,7 @@ class RetrofitInstance
                 NotificationAPI::class.java)
         }
 
-        val codeForcesAPI by lazy {
+        val codeForcesAPI: CodeForcesAPI by lazy {
             URL = Constants.CODE_FORCES_BASE_URL
             retrofit.create(CodeForcesAPI::class.java)
         }
