@@ -40,4 +40,26 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <EditText
+        android:id="@+id/codeIdTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint="CodeForces ID"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button" />
+
+    <Button
+        android:id="@+id/codeForces"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="44dp"
+        android:text="Toast FirstName"
+        app:layout_constraintEnd_toEndOf="@+id/codeIdTV"
+        app:layout_constraintStart_toStartOf="@+id/codeIdTV"
+        app:layout_constraintTop_toBottomOf="@+id/codeIdTV" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
