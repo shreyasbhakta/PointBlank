@@ -8,6 +8,10 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:statusBarColor">@color/deepBlack</item>
+    </style>
+
     <style name="Splash" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:statusBarColor">#212121</item>
     </style>
