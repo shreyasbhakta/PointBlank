@@ -9,5 +9,10 @@ class Constants
         const val CONTENT_TYPE = "application/json"
 
         const val CODE_FORCES_BASE_URL = "https://codeforces.com"
+
+        //Update Constants
+        const val UPDATE_COLLECTION = "UPDATE"
+        const val UPDATE_DOCUMENT ="NEWVERSION"
+        const val CURRENT_APK_VERSION = 2;
     }
 }

@@ -23,7 +23,7 @@ open class BaseActivity : AppCompatActivity() {
         progressbarDialog = ProgressDialog(this)
     }
 
-    protected fun showProgressDialog(message:String)
+     fun showProgressDialog(message:String)
     {
 
         progressbarDialog.setMessage(message)
@@ -32,7 +32,7 @@ open class BaseActivity : AppCompatActivity() {
         progressbarDialog.show()
     }
 
-    protected fun hideProgressBar()
+    fun hideProgressBar()
     {
         progressbarDialog.dismiss()
     }

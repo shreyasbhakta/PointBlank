@@ -1,6 +1,8 @@
 package com.dscepointblank.pointblank.notifications
 
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import com.dscepointblank.pointblank.R
@@ -33,6 +35,18 @@ class MyNotifications(private var context: Context) {
         notification.setContentTitle(title)
         notification.setContentText(message)
         notification.setSmallIcon(R.drawable.glow)
+        notification.priority = NotificationManagerCompat.IMPORTANCE_DEFAULT
+        notification.setLights(0xFFff0000.toInt(),100,100)
+        manager.notify(System.currentTimeMillis().toInt(),notification.build())
+    }
+
+    fun createNotification(title:String,message :String,intent: PendingIntent)
+    {
+        val notification  = NotificationCompat.Builder(context,NotificationConstants.GENERAL_CHANNEL_ID)
+        notification.setContentTitle(title)
+        notification.setContentText(message)
+        notification.setSmallIcon(R.drawable.glow)
+        notification.setContentIntent(intent)
         notification.priority = NotificationManagerCompat.IMPORTANCE_DEFAULT
         notification.setLights(0xFFff0000.toInt(),100,100)
         manager.notify(System.currentTimeMillis().toInt(),notification.build())
