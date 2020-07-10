@@ -2,8 +2,10 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mainLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".activities.MainActivity">
 
     <Button
@@ -61,5 +63,19 @@
         app:layout_constraintEnd_toEndOf="@+id/codeIdTV"
         app:layout_constraintStart_toStartOf="@+id/codeIdTV"
         app:layout_constraintTop_toBottomOf="@+id/codeIdTV" />
+
+    <Button
+        android:id="@+id/update"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="196dp"
+        android:layout_marginTop="125dp"
+        android:layout_marginEnd="198dp"
+        android:layout_marginBottom="208dp"
+        android:text="Update App"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/codeForces" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
