@@ -7,11 +7,13 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.text.HtmlCompat
 import androidx.navigation.fragment.findNavController
 
 import com.dscepointblank.pointblank.R
-
-
+import com.dscepointblank.pointblank.utilityClasses.Constants
+import kotlinx.android.synthetic.main.fragment_splash.view.*
+import kotlin.random.Random
 
 
 class SplashFragment : Fragment() {
@@ -25,9 +27,17 @@ class SplashFragment : Fragment() {
             findNavController().navigate(R.id.action_splashFragment_to_viewPagerFragment)
             else
                 findNavController().navigate(R.id.action_splashFragment_to_loginFragment)
-        },2000)
+        },2500)
 
-        return inflater.inflate(R.layout.fragment_splash, container, false)
+        val view =  inflater.inflate(R.layout.fragment_splash, container, false)
+
+
+        val text = "<font color=#00C853>Point</font> <font color=#fafafa>Blank</font>"
+        view.splashPbTv.text = HtmlCompat.fromHtml(text,HtmlCompat.FROM_HTML_MODE_LEGACY)
+        val random = Random.nextInt(Constants.tagLineSize)
+        view.splashTagLineTV.text = Constants.tagLines[random]
+
+        return view
     }
 
     private fun getOnBoardingValue():Boolean
