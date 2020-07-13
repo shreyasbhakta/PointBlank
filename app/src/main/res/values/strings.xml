@@ -24,5 +24,7 @@
     <string name="ok">Enable</string>
     <string name="logotexts"><![CDATA[<. >]]></string>
     <string name="leftHalf"><![CDATA[<.]]></string>
+    <string name="bracket1"><![CDATA[<.]]></string>
+    <string name="bracket2"><![CDATA[>]]></string>
 
 </resources>
