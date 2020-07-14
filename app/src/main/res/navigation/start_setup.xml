@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.dscepointblank.pointblank.fragments.onbording.ViewPagerFragment"
+        android:name="com.dscepointblank.pointblank.fragments.ViewPagerFragment"
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager" >
         <action
@@ -39,5 +39,5 @@
         android:id="@+id/loginFragment"
         android:name="com.dscepointblank.pointblank.fragments.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/old_login" />
 </navigation>

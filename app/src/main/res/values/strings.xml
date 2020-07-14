@@ -26,5 +26,7 @@
     <string name="leftHalf"><![CDATA[<.]]></string>
     <string name="bracket1"><![CDATA[<.]]></string>
     <string name="bracket2"><![CDATA[>]]></string>
+    <string name="pb_sub_text">ACM ICPC| GSOC | SIH | FOSS</string>
+    <string name="signup_here"><u>SignUp</u></string>
 
 </resources>
