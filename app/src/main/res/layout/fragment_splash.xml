@@ -30,7 +30,7 @@
         android:fontFamily="sans-serif-light"
         android:text=">"
         android:textColor="@color/green"
-        android:textSize="64sp"
+        android:textSize="68sp"
         app:layout_constraintBottom_toTopOf="@+id/splashPbTv"
         app:layout_constraintEnd_toEndOf="@+id/splashPbTv"
         app:layout_constraintHorizontal_bias="0.57"
@@ -72,7 +72,7 @@
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="24dp"
         android:textColor="@color/green"
-        android:text="ACM ICPC| GSOC | SIH | FOSS"
+        android:text="@string/pb_sub_text"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
