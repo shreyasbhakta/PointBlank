@@ -1,84 +1,55 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainLayout"
+    android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#ffffff"
+    android:background="@color/deepBlack"
     tools:context=".activities.MainActivity">
 
-    <Button
-        android:id="@+id/button"
+
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="androidx.navigation.fragment.NavHostFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="56dp"
+        app:defaultNavHost="true"
+        app:navGraph="@navigation/home_screen_navigation" />
+
+    <com.google.android.material.bottomappbar.BottomAppBar
+        android:id="@+id/mainActivityBottomAppBar"
+        android:layout_width="match_parent"
+        android:layout_gravity="bottom"
+        app:fabCradleRoundedCornerRadius="32dp"
+        app:fabAlignmentMode="center"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp"
+        android:backgroundTint="#3f3f3f"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            app:backgroundTint="@android:color/transparent"
+            app:elevation="0dp"
+            app:itemIconTint="@color/lightWhight"
+            app:itemRippleColor="@color/green"
+            app:itemTextColor="@color/lightWhight"
+            app:menu="@menu/bottom_sheet_menu" />
+    </com.google.android.material.bottomappbar.BottomAppBar>
+
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Send"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/fab"
+        android:backgroundTint="@color/green"
+        android:src="@drawable/ic_baseline_add_24"
+        app:layout_anchor="@id/mainActivityBottomAppBar" />
 
-    <EditText
-        android:id="@+id/notides"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Notification Description"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/green"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notititle" />
-
-    <EditText
-        android:id="@+id/notititle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Notification Title"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/green"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/codeIdTV"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:ems="10"
-        android:hint="CodeForces ID"
-        android:inputType="textPersonName"
-        android:textColorHint="@color/green"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-    <Button
-        android:id="@+id/codeForces"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="44dp"
-        android:text="Toast FirstName"
-        app:layout_constraintEnd_toEndOf="@+id/codeIdTV"
-        app:layout_constraintStart_toStartOf="@+id/codeIdTV"
-        app:layout_constraintTop_toBottomOf="@+id/codeIdTV" />
-
-    <Button
-        android:id="@+id/update"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="196dp"
-        android:layout_marginTop="125dp"
-        android:layout_marginEnd="198dp"
-        android:layout_marginBottom="208dp"
-        android:text="Update App"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/codeForces" />
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/deepBlack"
+    tools:context=".fragments.HomeScreenFragment">
+
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/tv_notificationTitleHomeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Notification Title"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/tv_notificationDesHomeScreen"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_sendNotificationHomeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        app:layout_constraintBottom_toTopOf="@+id/tv_codeForcesIDHomeScreen"
+        app:layout_constraintEnd_toEndOf="@+id/tv_notificationDesHomeScreen"
+        app:layout_constraintStart_toStartOf="@+id/tv_notificationDesHomeScreen"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notificationDesHomeScreen" />
+
+    <EditText
+        android:id="@+id/tv_notificationDesHomeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Notification Description"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/btn_sendNotificationHomeScreen"
+        app:layout_constraintEnd_toEndOf="@+id/tv_notificationTitleHomeScreen"
+        app:layout_constraintStart_toStartOf="@+id/tv_notificationTitleHomeScreen"
+        app:layout_constraintTop_toBottomOf="@+id/tv_notificationTitleHomeScreen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_toastCFDataHomeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Toast FirstName"
+        app:layout_constraintBottom_toTopOf="@+id/btn_updateAppHomeScreen"
+        app:layout_constraintEnd_toEndOf="@+id/tv_codeForcesIDHomeScreen"
+        app:layout_constraintStart_toStartOf="@+id/tv_codeForcesIDHomeScreen"
+        app:layout_constraintTop_toBottomOf="@+id/tv_codeForcesIDHomeScreen" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btn_updateAppHomeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Update App"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/btn_toastCFDataHomeScreen"
+        app:layout_constraintStart_toStartOf="@+id/btn_toastCFDataHomeScreen"
+        app:layout_constraintTop_toBottomOf="@+id/btn_toastCFDataHomeScreen" />
+
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/tv_codeForcesIDHomeScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="CodeForces ID"
+        android:inputType="textPersonName"
+        android:textColorHint="@color/green"
+        app:layout_constraintBottom_toTopOf="@+id/btn_toastCFDataHomeScreen"
+        app:layout_constraintEnd_toEndOf="@+id/tv_notificationDesHomeScreen"
+        app:layout_constraintStart_toStartOf="@+id/tv_notificationDesHomeScreen"
+        app:layout_constraintTop_toBottomOf="@+id/btn_sendNotificationHomeScreen" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

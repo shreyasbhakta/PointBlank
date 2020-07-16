@@ -16,7 +16,10 @@ import android.os.Build
 import android.os.Environment
 import android.widget.Toast
 import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.core.content.FileProvider
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentContainer
 import com.dscepointblank.pointblank.BuildConfig
 import com.dscepointblank.pointblank.R
 import com.dscepointblank.pointblank.activities.MainActivity
@@ -146,13 +149,31 @@ class DownloadController(private val context: Context, private val updateDocumen
             PERMISSION_REQUEST_STORAGE
         )
 
+    private fun requestStoragePermissionFragment() =
+        requestPermissions(
+            activity, arrayOf(Manifest.permission.WRITE_EXTERNAL_STORAGE),
+            PERMISSION_REQUEST_STORAGE
+        )
+
     fun onPermissionResult(
         requestCode: Int,
-        permissions: Array<out String>,
+        permissions: Array<out String>?,
         grantResults: IntArray
     ) {
         if (requestCode == PERMISSION_REQUEST_STORAGE) {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                checkNewVersionOnline()
+            } else {
+                (context as MainActivity).showErrorSnackMessage("Storage permission request was denied")
+            }
+        }
+    }
+
+    fun onPermissionResultFragment(
+        requestCode: Int, resultCode: Int, data: Intent?)
+    {
+        if (requestCode == PERMISSION_REQUEST_STORAGE) {
+            if (resultCode == PackageManager.PERMISSION_GRANTED) {
                 checkNewVersionOnline()
             } else {
                 (context as MainActivity).showErrorSnackMessage("Storage permission request was denied")

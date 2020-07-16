@@ -4,18 +4,18 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
 import com.dscepointblank.pointblank.R
+import com.dscepointblank.pointblank.fragments.HomeScreenFragment
 import com.dscepointblank.pointblank.models.UpdateModel
-import com.dscepointblank.pointblank.notifications.*
+import com.dscepointblank.pointblank.notifications.PushNotification
 import com.dscepointblank.pointblank.utilityClasses.DownloadController
 import com.dscepointblank.pointblank.utilityClasses.RetrofitInstance
 import com.google.firebase.messaging.FirebaseMessaging
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import java.lang.Exception
+
 
 const val TOPIC = "/topics/MyTopic"
 
@@ -29,30 +29,49 @@ class MainActivity : BaseActivity() {
         setContentView(R.layout.activity_main)
 
 
+
+//        fab.setBackgroundResource(R.drawable.box)
         FirebaseMessaging.getInstance().subscribeToTopic(TOPIC)
 
-        button.setOnClickListener {
-            if (notititle.text.toString().isNotEmpty() && notides.text.toString().isNotEmpty()) {
-
-                PushNotification(
-                    NotificationData(
-                        notititle.text.toString(),
-                        notides.text.toString()
-                    ), TOPIC
-                )
-                    .also { sendNotification(it) }
-            }
-        }
-
-        codeForces.setOnClickListener {
-            if(codeIdTV.text.toString().isNotEmpty())
-                getCodeForces(codeIdTV.text.toString())
-        }
-
-        update.setOnClickListener { checkForUpdates() }
+//
+//        button.setOnClickListener {
+//            if (notititle.text.toString().isNotEmpty() && notides.text.toString().isNotEmpty()) {
+//
+//                PushNotification(
+//                    NotificationData(
+//                        notititle.text.toString(),
+//                        notides.text.toString()
+//                    ), TOPIC
+//                )
+//                    .also { sendNotification(it) }
+//            }
+//        }
+//
+//        codeForces.setOnClickListener {
+//            if(codeIdTV.text.toString().isNotEmpty())
+//                getCodeForces(codeIdTV.text.toString())
+//        }
+//
+//        update.setOnClickListener { checkForUpdates() }
 
     }
 
+    override fun onRequestPermissionsResult(
+        requestCode: Int,
+        permissions: Array<out String>,
+        grantResults: IntArray
+    ) {
+
+        val navHostFragment =
+            supportFragmentManager.primaryNavigationFragment
+        val fragment =
+            navHostFragment!!.childFragmentManager.fragments[0]
+
+
+        (fragment as HomeScreenFragment).onRequestPermissionsResult(requestCode,permissions,grantResults)
+super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+
+    }
 
     private fun checkForUpdates() =
         try {
