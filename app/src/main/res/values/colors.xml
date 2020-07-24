@@ -11,4 +11,6 @@
     <color name="lightWhight">#fafafa</color>
     <color name="White">#FFFFFF</color>
     <color name="cursorcolor">#AD1457</color>
+    <color name="dull_green">#2E7026</color>
+    <color name="new_green">#009A40</color>
 </resources>

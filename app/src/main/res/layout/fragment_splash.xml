@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@android:color/transparent"
+    android:background="@color/deepBlack"
     app:layout_optimizationLevel="standard"
     tools:background="@color/deepBlack"
     tools:context=".fragments.SplashFragment">

@@ -1,13 +1,11 @@
 package com.dscepointblank.pointblank.fragments
 
-import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import com.dscepointblank.pointblank.R
 import com.dscepointblank.pointblank.activities.TOPIC
 import com.dscepointblank.pointblank.models.UpdateModel
@@ -16,7 +14,6 @@ import com.dscepointblank.pointblank.notifications.PushNotification
 import com.dscepointblank.pointblank.utilityClasses.DownloadController
 import com.dscepointblank.pointblank.utilityClasses.RetrofitInstance
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home_screen.view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
