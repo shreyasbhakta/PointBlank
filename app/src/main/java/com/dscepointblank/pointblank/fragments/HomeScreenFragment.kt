@@ -16,7 +16,6 @@ import com.dscepointblank.pointblank.notifications.PushNotification
 import com.dscepointblank.pointblank.utilityClasses.DownloadController
 import com.dscepointblank.pointblank.utilityClasses.RetrofitInstance
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home_screen.view.*
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope

@@ -128,7 +128,7 @@ class DownloadController(private val context: Context, private val updateDocumen
 
 
     private fun showStoragePermissionRationale() =
-        if (ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE))
+        if (!ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE))
             showSnackBar()
         else
             (activity as MainActivity).showErrorSnackMessage("Permission Denied,Please Go to Settings and enable the Permission")
