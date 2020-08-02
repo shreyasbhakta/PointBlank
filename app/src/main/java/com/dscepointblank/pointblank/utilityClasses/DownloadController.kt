@@ -20,7 +20,7 @@ import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.core.content.FileProvider
 import com.dscepointblank.pointblank.BuildConfig
 import com.dscepointblank.pointblank.R
-import com.dscepointblank.pointblank.ui.activities.MainActivity
+import com.dscepointblank.pointblank.ui.activities.HomeActivity
 import com.dscepointblank.pointblank.models.UpdateModel
 import com.dscepointblank.pointblank.notifications.MyNotifications
 import com.google.android.material.snackbar.Snackbar
@@ -129,7 +129,7 @@ class DownloadController(private val context: Context, private val updateDocumen
         if (!ActivityCompat.shouldShowRequestPermissionRationale(activity, Manifest.permission.WRITE_EXTERNAL_STORAGE))
             showSnackBar()
         else
-            (activity as MainActivity).showErrorSnackMessage("Permission Denied,Please Go to Settings and enable the Permission")
+            (activity as HomeActivity).showErrorSnackMessage("Permission Denied,Please Go to Settings and enable the Permission")
 
 
     private fun showSnackBar() =
@@ -162,7 +162,7 @@ class DownloadController(private val context: Context, private val updateDocumen
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 checkNewVersionOnline()
             } else {
-                (context as MainActivity).showErrorSnackMessage("Storage permission request was denied")
+                (context as HomeActivity).showErrorSnackMessage("Storage permission request was denied")
             }
         }
     }
@@ -174,7 +174,7 @@ class DownloadController(private val context: Context, private val updateDocumen
             if (resultCode == PackageManager.PERMISSION_GRANTED) {
                 checkNewVersionOnline()
             } else {
-                (context as MainActivity).showErrorSnackMessage("Storage permission request was denied")
+                (context as HomeActivity).showErrorSnackMessage("Storage permission request was denied")
             }
         }
     }
@@ -182,7 +182,7 @@ class DownloadController(private val context: Context, private val updateDocumen
      private fun checkNewVersionOnline() = GlobalScope.launch(Dispatchers.IO) {
          withContext(Dispatchers.Main)
          {
-             (activity as MainActivity).showProgressDialog("Checking ....")
+             (activity as HomeActivity).showProgressDialog("Checking ....")
          }
 
         val updateDocument = Firebase.firestore.collection(Constants.UPDATE_COLLECTION)
@@ -190,7 +190,7 @@ class DownloadController(private val context: Context, private val updateDocumen
 
         withContext(Dispatchers.Main)
         {
-            (activity as MainActivity).hideProgressBar()
+            (activity as HomeActivity).hideProgressBar()
             if(Constants.CURRENT_APK_VERSION<updateDocument!!.version)
                 enqueueDownload(updateDocument.link)
             else

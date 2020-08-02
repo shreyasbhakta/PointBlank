@@ -43,7 +43,7 @@
         </activity>
 
         <activity
-            android:name="com.dscepointblank.pointblank.ui.activities.MainActivity"
+            android:name="com.dscepointblank.pointblank.ui.activities.HomeActivity"
             android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -31,5 +31,7 @@ class Constants
              "F"
         )
          val tagLineSize = tagLines.size
+
+        const val TOPIC = "/topics/MyTopic"
     }
 }

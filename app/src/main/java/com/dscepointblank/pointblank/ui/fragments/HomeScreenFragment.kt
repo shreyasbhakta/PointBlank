@@ -60,11 +60,6 @@ class HomeScreenFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-
-
-        Blurry.with(requireContext()).radius(25).sampling(2).async()
-            .onto(view.findViewById(R.id.include) as ViewGroup)
     }
 
     private fun sendNotification(notification: PushNotification) =
