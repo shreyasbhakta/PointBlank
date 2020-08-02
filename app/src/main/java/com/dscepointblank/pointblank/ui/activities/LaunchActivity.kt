@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.activities
+package com.dscepointblank.pointblank.ui.activities
 
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable

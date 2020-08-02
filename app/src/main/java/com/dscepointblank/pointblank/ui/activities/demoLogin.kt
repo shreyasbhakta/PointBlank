@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.activities
+package com.dscepointblank.pointblank.ui.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle

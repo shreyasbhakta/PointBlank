@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.fragments
+package com.dscepointblank.pointblank.ui.fragments
 
 import android.content.Context
 import android.os.Bundle

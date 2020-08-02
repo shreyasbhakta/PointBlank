@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.fragments.onbording
+package com.dscepointblank.pointblank.ui.fragments.onbording
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.viewpager2.widget.ViewPager2
 
 import com.dscepointblank.pointblank.R
-import kotlinx.android.synthetic.main.fragment_forum.*
 import kotlinx.android.synthetic.main.fragment_forum.view.*
 
 class Forum : Fragment() {

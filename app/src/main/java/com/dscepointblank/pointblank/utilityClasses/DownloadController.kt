@@ -18,11 +18,9 @@ import android.widget.Toast
 import androidx.core.app.ActivityCompat
 import androidx.core.app.ActivityCompat.requestPermissions
 import androidx.core.content.FileProvider
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentContainer
 import com.dscepointblank.pointblank.BuildConfig
 import com.dscepointblank.pointblank.R
-import com.dscepointblank.pointblank.activities.MainActivity
+import com.dscepointblank.pointblank.ui.activities.MainActivity
 import com.dscepointblank.pointblank.models.UpdateModel
 import com.dscepointblank.pointblank.notifications.MyNotifications
 import com.google.android.material.snackbar.Snackbar

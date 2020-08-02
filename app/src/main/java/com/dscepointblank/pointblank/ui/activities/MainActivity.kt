@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.activities
+package com.dscepointblank.pointblank.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,8 +8,8 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.dscepointblank.pointblank.R
-import com.dscepointblank.pointblank.fragments.HomeScreenFragment
-import com.dscepointblank.pointblank.fragments.WebViewFrag
+import com.dscepointblank.pointblank.ui.fragments.HomeScreenFragment
+import com.dscepointblank.pointblank.ui.fragments.WebViewFrag
 import com.dscepointblank.pointblank.utilityClasses.DownloadController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.messaging.FirebaseMessaging
@@ -43,7 +43,7 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
 
-        return if (keyCode == KeyEvent.KEYCODE_BACK) {
+        return if (keyCode == KeyEvent.KEYCODE_BACK && visibleWebView !is HomeScreenFragment) {
             val intent = Intent(visibleWebView.hashCode().toString())
             LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
             true

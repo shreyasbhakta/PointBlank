@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.activities
+package com.dscepointblank.pointblank.ui.activities
 
 import android.app.ProgressDialog
 import android.content.Context
@@ -10,8 +10,6 @@ import com.google.android.material.snackbar.Snackbar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.dscepointblank.pointblank.R
-
-import kotlinx.android.synthetic.main.activity_base.*
 
 open class BaseActivity : AppCompatActivity() {
 

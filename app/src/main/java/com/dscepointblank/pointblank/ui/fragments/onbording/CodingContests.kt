@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.fragments.onbording
+package com.dscepointblank.pointblank.ui.fragments.onbording
 
 import android.content.Context
 import android.os.Bundle
