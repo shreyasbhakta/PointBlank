@@ -8,6 +8,7 @@
     android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
     tools:context=".ui.fragments.LoginFragment">
 
+
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"
         android:layout_width="0dp"
