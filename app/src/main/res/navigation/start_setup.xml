@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/splashFragment"
-        android:name="com.dscepointblank.pointblank.fragments.SplashFragment"
+        android:name="com.dscepointblank.pointblank.ui.fragments.SplashFragment"
         android:label="fragment_splash"
         tools:layout="@layout/fragment_splash" >
         <action
@@ -25,7 +25,7 @@
     </fragment>
     <fragment
         android:id="@+id/viewPagerFragment"
-        android:name="com.dscepointblank.pointblank.fragments.ViewPagerFragment"
+        android:name="com.dscepointblank.pointblank.ui.fragments.ViewPagerFragment"
         android:label="fragment_view_pager"
         tools:layout="@layout/fragment_view_pager" >
         <action
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.dscepointblank.pointblank.fragments.LoginFragment"
+        android:name="com.dscepointblank.pointblank.ui.fragments.LoginFragment"
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
@@ -52,7 +52,7 @@
     </fragment>
     <fragment
         android:id="@+id/signUpFragment2"
-        android:name="com.dscepointblank.pointblank.fragments.SignUpFragment"
+        android:name="com.dscepointblank.pointblank.ui.fragments.SignUpFragment"
         android:label="fragment_sign_up"
         tools:layout="@layout/fragment_sign_up" />
 </navigation>

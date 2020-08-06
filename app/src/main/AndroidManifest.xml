@@ -22,8 +22,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name=".activities.BaseActivity" />
-        <activity android:name=".activities.demoLogin"/>
+        <activity android:name="com.dscepointblank.pointblank.ui.activities.BaseActivity" />
+        <activity android:name="com.dscepointblank.pointblank.ui.activities.demoLogin"/>
 
 
         <service
@@ -36,20 +36,20 @@
         </service>
 
         <activity
-            android:name=".activities.LaunchActivity"
+            android:name="com.dscepointblank.pointblank.ui.activities.LaunchActivity"
             android:theme="@style/NoActionBar">
 
+
+        </activity>
+
+        <activity
+            android:name="com.dscepointblank.pointblank.ui.activities.HomeActivity"
+            android:theme="@style/Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".activities.MainActivity"
-            android:theme="@style/Splash">
-
         </activity>
 
         <provider

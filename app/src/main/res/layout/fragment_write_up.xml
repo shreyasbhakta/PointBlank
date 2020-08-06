@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/green"
-    tools:context=".fragments.onbording.WriteUpFragment">
+    tools:context=".ui.fragments.onbording.WriteUpFragment">
 
     <TextView
         android:id="@+id/textView11"

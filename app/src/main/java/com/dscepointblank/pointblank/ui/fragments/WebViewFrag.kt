@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.fragments
+package com.dscepointblank.pointblank.ui.fragments
 
 
 import android.annotation.SuppressLint
@@ -55,6 +55,7 @@ class WebViewFrag : Fragment() {
         view.requestFocus()
 
         webView = view.fragwebView
+        webView.settings.userAgentString = System.getProperty("http.agent")
         progressBar = view.fragprogressBar
         swipeRefreshLayout = view.fragswipe
         swipeRefreshLayout.setColorSchemeColors(Color.BLUE, Color.RED, Color.GREEN)

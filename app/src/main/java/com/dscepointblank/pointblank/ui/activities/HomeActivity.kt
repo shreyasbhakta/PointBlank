@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.activities
+package com.dscepointblank.pointblank.ui.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,17 +8,17 @@ import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.localbroadcastmanager.content.LocalBroadcastManager
 import com.dscepointblank.pointblank.R
-import com.dscepointblank.pointblank.fragments.HomeScreenFragment
-import com.dscepointblank.pointblank.fragments.WebViewFrag
+import com.dscepointblank.pointblank.ui.fragments.HomeScreenFragment
+import com.dscepointblank.pointblank.ui.fragments.WebViewFrag
+import com.dscepointblank.pointblank.utilityClasses.Constants.Companion.TOPIC
 import com.dscepointblank.pointblank.utilityClasses.DownloadController
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.messaging.FirebaseMessaging
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_home.*
 
 
-const val TOPIC = "/topics/MyTopic"
 
-class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelectedListener,
+class HomeActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelectedListener,
     View.OnClickListener {
     private val forumWebView: Fragment = WebViewFrag.newInstance("https://forum.dsce.in/")
     private val writeupWebView: Fragment = WebViewFrag.newInstance("https://writeups.dsce.in/")
@@ -30,7 +30,7 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_home)
         fm.beginTransaction().add(R.id.fragContainer, writeupWebView).hide(writeupWebView).commit()
         fm.beginTransaction().add(R.id.fragContainer, forumWebView).hide(forumWebView).commit()
         fm.beginTransaction().add(R.id.fragContainer, homeFrag).show(homeFrag).commit()
@@ -43,7 +43,7 @@ class MainActivity : BaseActivity(), BottomNavigationView.OnNavigationItemSelect
 
     override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
 
-        return if (keyCode == KeyEvent.KEYCODE_BACK) {
+        return if (keyCode == KeyEvent.KEYCODE_BACK && visibleWebView !is HomeScreenFragment) {
             val intent = Intent(visibleWebView.hashCode().toString())
             LocalBroadcastManager.getInstance(this).sendBroadcast(intent)
             true
