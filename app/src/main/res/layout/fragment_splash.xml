@@ -7,7 +7,7 @@
     android:background="@color/deepBlack"
     app:layout_optimizationLevel="standard"
     tools:background="@color/deepBlack"
-    tools:context=".fragments.SplashFragment">
+    tools:context=".ui.fragments.SplashFragment">
 
     <TextView
         android:id="@+id/splashPbTv"

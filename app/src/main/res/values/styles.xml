@@ -31,43 +31,4 @@
     </style>
 
 
-    <style name="SignUpEditText" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
-        <item name="materialThemeOverlay">@style/signup</item>
-        <item name="hintTextColor">?attr/colorPrimary</item>
-        <item name="boxBackgroundColor">#3a3c42</item>
-
-    </style>
-
-    <style name="signup" parent="">
-        <item name="colorPrimary">@android:color/black</item>
-        <item name="colorOnSurface">@android:color/black</item>
-        <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.FilledBox
-        </item>
-    </style>
-
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
-
-
-
-    <style name="Other" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="materialThemeOverlay">@style/idk</item>
-        <item name="hintTextColor">?attr/colorPrimary</item>
-
-    </style>
-
-    <style name="idk" parent="Base.Widget.MaterialComponents.TextInputEditText">
-        <item name="android:background">@color/White</item>
-        <item name="colorPrimary">@color/deepBlack</item>
-        <item name="colorOnSurface">@android:color/black</item>
-        <item name="editTextStyle">@style/Widget.MaterialComponents.TextInputEditText.OutlinedBox
-        </item>
-    </style>
-
 </resources>

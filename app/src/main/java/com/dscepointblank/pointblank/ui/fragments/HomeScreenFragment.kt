@@ -1,28 +1,33 @@
-package com.dscepointblank.pointblank.fragments
+package com.dscepointblank.pointblank.ui.fragments
 
+import android.graphics.Color
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.dscepointblank.pointblank.R
-import com.dscepointblank.pointblank.activities.TOPIC
 import com.dscepointblank.pointblank.models.UpdateModel
-import com.dscepointblank.pointblank.notifications.NotificationData
 import com.dscepointblank.pointblank.notifications.PushNotification
 import com.dscepointblank.pointblank.utilityClasses.DownloadController
 import com.dscepointblank.pointblank.utilityClasses.RetrofitInstance
 import com.google.gson.Gson
-import kotlinx.android.synthetic.main.fragment_home_screen.view.*
+import jp.wasabeef.blurry.Blurry
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
-import java.lang.Exception
+
 
 class HomeScreenFragment : Fragment() {
 
     lateinit var downloadController: DownloadController
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
+        requireActivity().window.statusBarColor = Color.parseColor("#3f3f3f")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -31,24 +36,30 @@ class HomeScreenFragment : Fragment() {
         // Inflate the layout for this fragment
         val view =  inflater.inflate(R.layout.fragment_home_screen, container, false)
 
-        view.btn_sendNotificationHomeScreen.setOnClickListener {
-            if (view.tv_notificationTitleHomeScreen.text.toString().isNotEmpty() && view.tv_notificationDesHomeScreen.text.toString().isNotEmpty()) {
-
-                PushNotification(
-                    NotificationData(
-                        view.tv_notificationTitleHomeScreen.text.toString(),
-                        view.tv_notificationDesHomeScreen.text.toString()
-                    ), TOPIC
-                )
-                    .also { sendNotification(it) }
-            }
-        }
 
 
-        view.btn_updateAppHomeScreen.setOnClickListener {
-            checkForUpdates()
-        }
+//        view.btn_sendNotificationHomeScreen.setOnClickListener {
+//            if (view.tv_notificationTitleHomeScreen.text.toString().isNotEmpty() && view.tv_notificationDesHomeScreen.text.toString().isNotEmpty()) {
+//
+//                PushNotification(
+//                    NotificationData(
+//                        view.tv_notificationTitleHomeScreen.text.toString(),
+//                        view.tv_notificationDesHomeScreen.text.toString()
+//                    ), TOPIC
+//                )
+//                    .also { sendNotification(it) }
+//            }
+//        }
+
+
+//        view.btn_updateAppHomeScreen.setOnClickListener {
+//            checkForUpdates()
+//        }
         return  view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
     }
 
     private fun sendNotification(notification: PushNotification) =

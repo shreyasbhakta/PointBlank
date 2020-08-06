@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/deepBlack"
     android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar"
-    tools:context=".fragments.LoginFragment">
+    tools:context=".ui.fragments.LoginFragment">
 
     <androidx.constraintlayout.widget.Group
         android:id="@+id/group"

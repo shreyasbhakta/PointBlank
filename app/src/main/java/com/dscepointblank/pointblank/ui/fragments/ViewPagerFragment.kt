@@ -1,4 +1,4 @@
-package com.dscepointblank.pointblank.fragments
+package com.dscepointblank.pointblank.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.dscepointblank.pointblank.R
 import com.dscepointblank.pointblank.adapters.ViewPagerAdapter
-import com.dscepointblank.pointblank.fragments.onbording.CodingContests
-import com.dscepointblank.pointblank.fragments.onbording.Forum
-import com.dscepointblank.pointblank.fragments.onbording.WriteUpFragment
+import com.dscepointblank.pointblank.ui.fragments.onbording.CodingContests
+import com.dscepointblank.pointblank.ui.fragments.onbording.Forum
+import com.dscepointblank.pointblank.ui.fragments.onbording.WriteUpFragment
 import com.dscepointblank.pointblank.utilityClasses.DepthPageTransformer
 import kotlinx.android.synthetic.main.fragment_view_pager.view.*
 
